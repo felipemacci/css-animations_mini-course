@@ -9,8 +9,6 @@
 
 <br />
 
-<br />
-
 #### TECHNOLOGIES:
 - HTML 📄
 - CSS 🎨
