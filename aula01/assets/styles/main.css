@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+#background {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url('../images/sky.png');
+    background-size: cover;
+}
+
+#airplane {
+    position: absolute;
+    top: 160px;
+    left: 0;
+    
+    /*
+    ease: suavização no início e no fim com uma aceleração no meio (padrão)
+    ease-in: suavização no início da animação
+    ease-out: suavização no fim da animação
+    ease-in-out: suavização no início e no fim da animação
+    linear: sem suavização
+    cubic-bezier(): suavização personalizada
+    steps(): limita a animação em frames
+
+    backwards: o primeiro estado da animação deve ser mantido
+    forwards: o último estado da animação deve ser mantido
+    both: ambos
+    */
+
+    /* 
+    animation-name: fly; // nome da animação
+    animation-duration: 1s; // duração da animação
+    animation-timing-function: ease-in; // timing da animação
+    animation-delay: 2s; // quanto tempo até a animação ser iniciada
+    animation-iteration-count: 3; // quantas vezes a animação se repetirá
+    animation-direction: normal; // direção da animação
+    animation-fill-mode: forwards; // quais valores são aplicados antes e/ou depois da animação
+    animation-play-state: running // define se a animação está sendo executada ou não
+    */
+
+    animation: fly 1s ease-in 2s 3 forwards;
+}
+
+#airplane:hover {
+    animation-play-state: paused; /* Se eu passar o mouse em cima do avião, ele para, se eu tirar, ele continua */
+}
+
+@keyframes fly {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(100vw - 250px))
+    }
+}
